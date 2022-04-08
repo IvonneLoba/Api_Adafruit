@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdafruitsTable extends Migration
+class CreateDistanciasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateAdafruitsTable extends Migration
      */
     public function up()
     {
-        Schema::create('adafruits', function (Blueprint $table) {
+        Schema::create('distancias', function (Blueprint $table) {
             $table->id();
             $table->String('Datos', 250);
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateAdafruitsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('adafruits');
+        Schema::dropIfExists('distancias');
     }
 }

@@ -120,10 +120,4 @@ class ApiController extends Controller
         return response()->json(['user' => $user]);
     }
 
-  //  public function get_mostrar (Request $request)
-  //  {
-    //    $
-    //}
-
-
 }

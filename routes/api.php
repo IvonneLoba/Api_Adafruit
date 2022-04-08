@@ -6,6 +6,12 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdafruitController;
+use App\Http\Controllers\DistController;
+use App\Http\Controllers\HumController;
+use App\Http\Controllers\MovController;
+use App\Http\Controllers\PesoController;
+use App\Http\Controllers\TemController;
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -33,13 +39,22 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 });
 
 //Sensor de Distancia, solo se obtiene lectura; no se manda información.
-Route::get('get_mostrarDist/mostrar', [AdafruitController::class, 'get_mostrarDist']);
+Route::get('get_mostrarDist/mostrar', [DitController::class, 'get_mostrarDist']);
 
 //Sensor de Humedad, igual que el anterior, solo se obtiene lectura.
-Route::get('get_mostrarHum/mostrar', [AdafruitController::class, 'get_mostrarHum']);
+Route::get('get_mostrarHum/mostrar', [HumController::class, 'get_mostrarHum']);
 
 //Sensor de Temperatura,   "   "   "   ".
-Route::get('get_mostrarTem/mostrar', [AdafruitController::class, 'get_mostrarTem']);
+Route::get('get_mostrarTem/mostrar', [TemController::class, 'get_mostrarTem']);
+
+//Sensor Movimiento
+Route::get('get_mostrarMov/mostrar', [MovController::class, 'get_mostrarMov']);
+
+//Sensor Peso
+Route::get('get_mostrarPeso/mostrar', [PesoController::class, 'get_mostrarMov']);
+
+//Sensor Tarjeta(wifi)
+//Route::get('get_motrarTarjeta/mostrar', [AdafruitController::class, 'get_motrarTarjeta']);
 
 //Grupo de Sensores
-Route::post('post_groups/mostrargrupo', [AdafruitController::class, 'post_groups']);
+//Route::post('post_groups/mostrargrupo', [AdafruitController::class, 'post_groups']);
