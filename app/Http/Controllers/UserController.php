@@ -81,7 +81,7 @@ class UserController extends Controller
         return response()->json(compact('user','token'),201);
     }
 
-    public function get_mostrarUsuario (){
+    public function get_mostrarusuario (){
         return User::all();
     }
 }
