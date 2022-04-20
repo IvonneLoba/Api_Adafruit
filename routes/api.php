@@ -39,7 +39,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 });
 
 //Sensor de Distancia, solo se obtiene lectura; no se manda información.
-Route::get('get_mostrarDist/mostrar', [DitController::class, 'get_mostrarDist']);
+Route::get('get_mostrarDist/mostrar', [DistController::class, 'get_mostrarDist']);
 
 //Sensor de Humedad, igual que el anterior, solo se obtiene lectura.
 Route::get('get_mostrarHum/mostrar', [HumController::class, 'get_mostrarHum']);
