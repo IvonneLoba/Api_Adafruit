@@ -51,7 +51,9 @@ Route::get('get_mostrarTem/mostrar', [TemController::class, 'get_mostrarTem']);
 Route::get('get_mostrarMov/mostrar', [MovController::class, 'get_mostrarMov']);
 
 //Sensor Peso
-Route::get('get_mostrarPeso/mostrar', [PesoController::class, 'get_mostrarMov']);
+Route::get('get_mostrarPeso/mostrar', [PesoController::class, 'get_mostrarPeso']);
+
+Route::get('get_mostrarUsuario/mostrar', [UserController::class, 'get_mostrarUsuario']);
 
 //Sensor Tarjeta(wifi)
 //Route::get('get_motrarTarjeta/mostrar', [AdafruitController::class, 'get_motrarTarjeta']);

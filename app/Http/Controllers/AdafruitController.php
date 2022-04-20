@@ -26,47 +26,6 @@ class AdafruitController extends Controller
 		])->getBody();
 }
 
-public function get_mostrarDist ()
-{
-  $client = new Client();
-
-  return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/distvalue/data', [
-    'headers' => ['X-AIO-Key', 'aio_ALNX33MRSmwsNXUM2fQmcyh1VT7h']
- ])->getBody();
-}
-
-public function get_mostrarHum ()
-{
-  $client = new Client();
-  return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/humvalue/data', [
-    'headers'=>['X-AIO-key', 'aio_ALNX33MRSmwsNXUM2fQmcyh1VT7h']
-  ])->getBody();
-}
-
-public function get_mostrarTem ()
-{
-  $client = new Client();
-  return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/temp/data', [
-     'headers'=> ['X-AIO-key', 'aio_ALNX33MRSmwsNXUM2fQmcyh1VT7h']
-  ])->getBody();
-}
-
-public function get_mostrarMov()
-{
-  $client = new Client();
-  return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/movimiento/data', [
-    'headers'=> ['X-AIO-key', 'aio_ALNX33MRSmwsNXUM2fQmcyh1VT7h']
-  ])->getBody();
-}
-
-public function get_mostrarPeso()
-{
-  $client = new Client();
-  return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/peso/data', [
-    'headers'=> ['X-AIO-key', 'aio_ALNX33MRSmwsNXUM2fQmcyh1VT7h']
-  ])->getBody();
-}
-
 //public function get_motrarTarjeta()
 //{
   //return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/tarjeta/data', [
