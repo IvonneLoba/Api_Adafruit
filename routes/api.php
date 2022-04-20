@@ -55,7 +55,7 @@ Route::get('get_mostrarPeso/mostrar', [PesoController::class, 'get_mostrarPeso']
 
 Route::get('get_mostrarusuario/mostrar', [UserController::class, 'get_mostrarusuario']);
 
-Route::get('prueba', function(){
+Route::get('/prueba', function(){
     return 'holla';
 })->name('user');
 
