@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('get_mostrarusuario/mostrar', [UserController::class, 'get_mostrarusuario']);
+//Route::get('get_mostrarusuario/mostrar', [UserController::class, 'get_mostrarusuario']);
 
-Route::get('/prueba', function(){
-    return 'holla';
-})->name('user');
+//Route::get('/prueba', function(){
+  //  return 'holla';
+//})->name('user');
 

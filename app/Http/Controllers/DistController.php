@@ -13,7 +13,7 @@ class DistController extends Controller
   $client = new Client();
 
   return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/distvalue/data', [
-    'headers' => ['X-AIO-Key', 'aio_abnx18WMwwOdUkWiWJRDskUtL718']
+    'headers' => ['X-AIO-Key', 'aio_bmll118GUg6Mg4NEm9pDH9g8CCAB']
  ])->getBody();
 }
 }
