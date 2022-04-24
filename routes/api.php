@@ -61,17 +61,54 @@ Route::get('get_mostrarusuario/mostrar', [UserController::class, 'get_mostrarusu
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-//Grupo Sensores
-Route::prefix('AdafruitController')->group (function (){
+//Grupo Usuarios
+Route::prefix('GrupoUsuarios')->group (function (){
     Route::get('get_UserController/get_mostrarusuario', [UserController::class, 'get_mostrarusuario']);
-    Route::get('get_AdafruitController/get_mostrarDist', [AdafruitController::class, 'get_mostrarDist']);
-    Route::get('get_AdafruitController/get_mostrarHum', [AdafruitController::class, 'get_mostrarHum']);
-    Route::get('get_AdafruitController/get_mostrarTem', [AdafruitController::class, 'get_mostrarTem']);
-    Route::get('get_AdafruitController/get_mostrarMov', [AdafruitController::class, 'get_mostrarMov']);
-    Route::get('get_AdafruitController/get_mostrarPeso', [AdafruitController::class, 'get_mostrarPeso']);
     
  });
+
+//Grupos Sensores
+
+Route::prefix('GrupoLed')->group (function (){
+  
+    Route::get('get_mostrarled', [AdafruitController::class, 'get_mostrarled']);
+    
+ });
+
+Route::prefix('GrupoDist')->group (function (){
+  
+    Route::get('get_mostrarDist', [DistController::class, 'get_mostrarDist']);
+    Route::post('post_registro_Dist', [DistController::class, 'post_registro_Dist']);
+    
+ });
+
+ Route::prefix('GrupoHum')->group (function (){
+  
+    Route::get('get_mostrarHum', [AdafruitController::class, 'get_mostrarHum']);
+    
+ });
+
+ Route::prefix('GrupoTem')->group (function (){
+
+    Route::get('get_mostrarTem', [AdafruitController::class, 'get_mostrarTem']);
+
+    
+ });
+
+ Route::prefix('GrupoMov')->group (function (){
+
+    Route::get('get_mostrarMov', [AdafruitController::class, 'get_mostrarMov']);
+
+    
+ });
+
+ Route::prefix('GrupoPeso')->group (function (){
+  
+    Route::get('get_mostrarPeso', [AdafruitController::class, 'get_mostrarPeso']);
+    
+ });
+
+ 
 
  //------------------------------------------------------------------------------------------------------//
 

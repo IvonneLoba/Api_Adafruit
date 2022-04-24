@@ -26,61 +26,6 @@ class AdafruitController extends Controller
 		])->getBody();
 }
 
-//Distancia
-
-    public function get_mostrarDist ()
-{
-  $client = new Client();
-
-  return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/distvalue/data', [
-    'headers' => ['X-AIO-Key', 'aio_bmll118GUg6Mg4NEm9pDH9g8CCAB']
- ])->getBody();
-}
-
-
-//Humedad
-
-    public function get_mostrarHum ()
-{
-  $client = new Client();
-  return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/humvalue/data', [
-    'headers'=>['X-AIO-key', 'aio_bmll118GUg6Mg4NEm9pDH9g8CCAB']
-  ])->getBody();
-}
-
-//Temperatura
-
-public function get_mostrarTem ()
-{
-  $client = new Client();
-  return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/temp/data', [
-     'headers'=> ['X-AIO-key', 'aio_bmll118GUg6Mg4NEm9pDH9g8CCAB']
-  ])->getBody();
-}
-
-
-//Movimiento
-
-    public function get_mostrarMov()
-{
-  $client = new Client();
-  return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/movimiento/data', [
-    'headers'=> ['X-AIO-key', 'aio_bmll118GUg6Mg4NEm9pDH9g8CCAB']
-  ])->getBody();
-}
-
-//Peso
-public function get_mostrarPeso()
-{
-  $client = new Client();
-  return $client->request('GET', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/feeds/peso/data', [
-    'headers'=> ['X-AIO-key', 'aio_bmll118GUg6Mg4NEm9pDH9g8CCAB']
-  ])->getBody();
-}
-
-
-
-
 
 
 
