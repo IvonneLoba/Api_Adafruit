@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
+use App\Models\Adafruit;
 
 class AdafruitController extends Controller
 {
@@ -24,7 +25,40 @@ class AdafruitController extends Controller
 			'headers' => ['X-AIO-Key' => 'aio_bmll118GUg6Mg4NEm9pDH9g8CCAB'],
 			'form_params' => ['value' => $request['led']]
 		])->getBody();
+  }
+
+    public function post_registro_Led (Request $R)
+{
+  $Registro_Led = new Adafruit ();
+  $Registro_Led ->datos = $R->datos;
+  $Registro_Led ->save();
+  return $Registro_Led;
 }
+
+public function get_LedMostrarReg (Request $R)
+{
+  $Registro_Led = Adafruit::all();
+  return $Registro_Led;
+}
+
+public function put_registroLed (int $id, Request $R)
+{
+  $Registro_Led = Adafruit::find($id);
+  $Registro_Led ->datos = $R->datos;  
+  $Registro_Led ->save();
+  return Adafruit::all();
+}
+
+public function delete_regisLed (int $id)
+{
+  $Registro_Led = Adafruit::find ($id);
+  $Registro_Led -> delete();
+  return Adafruit::all();
+}
+
+
+
+
 
 
 

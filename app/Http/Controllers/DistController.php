@@ -21,6 +21,7 @@ public function get_mostrarDist ()
  ])->getBody();
 }
 
+
 public function post_registro_Dist (Request $R)
 {
   $Registro_Dist = new Distancia ();
@@ -29,18 +30,26 @@ public function post_registro_Dist (Request $R)
   return $Registro_Dist;
 }
 
-public function put_registroDist (Request $R)
+public function get_DistMostrarReg (Request $R)
 {
-  $Registro_Dist = $client::find($id);
+  $Registro_Dist = Distancia :: all();
+  return $Registro_Dist;
+}
+
+public function put_registroDist (int $id, Request $R)
+{
+  $Registro_Dist = Distancia::find($id);
   $Registro_Dist->datos = $R->datos;  
+  $Registro_Dist->save();
+  return Distancia::all();
 
 }
 
 public function delete_regisDist (int $id)
 {
-  $Registro_Dist = Registro_Dist :: find ($id);
-  $Registro_Dist = delete();
-  return Registro_Dist::all();
+  $Registro_Dist = Distancia::find ($id);
+  $Registro_Dist -> delete();
+  return Distancia::all();
 }
 
 }

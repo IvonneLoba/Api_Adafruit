@@ -70,8 +70,13 @@ Route::prefix('GrupoUsuarios')->group (function (){
 //Grupos Sensores
 
 Route::prefix('GrupoLed')->group (function (){
-  
+
+    Route::post('enviarled', [AdafruitController::class, 'enviarled']);  
     Route::get('get_mostrarled', [AdafruitController::class, 'get_mostrarled']);
+    Route::post('post_registro_Led', [AdafruitController::class, 'post_registro_Led']);
+    Route::get('get_LedMostrarReg', [AdafruitController::class, 'get_LedMostrarReg']);
+    Route::put('put_registroLed/{id}', [AdafruitController::class, 'put_registroLed']);
+    Route::delete('delete_regisLed/{id}', [AdafruitController::class, 'delete_regisLed']); 
     
  });
 
@@ -79,38 +84,52 @@ Route::prefix('GrupoDist')->group (function (){
   
     Route::get('get_mostrarDist', [DistController::class, 'get_mostrarDist']);
     Route::post('post_registro_Dist', [DistController::class, 'post_registro_Dist']);
-    
+    Route::get('get_DistMostrarReg', [DistController::class, 'get_DistMostrarReg']);
+    Route::put('put_registroDist/{id}', [DistController::class, 'put_registroDist']);
+    Route::delete('delete_regisDist/{id}', [DistController::class, 'delete_regisDist']);    
  });
 
  Route::prefix('GrupoHum')->group (function (){
   
-    Route::get('get_mostrarHum', [AdafruitController::class, 'get_mostrarHum']);
-    
- });
-
- Route::prefix('GrupoTem')->group (function (){
-
-    Route::get('get_mostrarTem', [AdafruitController::class, 'get_mostrarTem']);
-
+    Route::get('get_mostrarHum', [HumController::class, 'get_mostrarHum']);
+    Route::post('post_registro_Hum', [HumController::class, 'post_registro_Hum']);
+    Route::get('get_HumMostrarReg', [HumController::class, 'get_HumMostrarReg']);
+    Route::put('put_registroHum/{id}', [HumController::class, 'put_registroHum']);
+    Route::delete('delete_regisHum/{id}', [HumController::class, 'delete_regisHum']);    
     
  });
 
  Route::prefix('GrupoMov')->group (function (){
 
-    Route::get('get_mostrarMov', [AdafruitController::class, 'get_mostrarMov']);
-
-    
+    Route::get('get_mostrarMov', [MovController::class, 'get_mostrarMov']);
+    Route::post('post_registro_Mov', [MovController::class, 'post_registro_Mov']);
+    Route::get('get_MovMostrarReg', [MovController::class, 'get_MovMostrarReg']);
+    Route::put('put_registroMov/{id}', [MovController::class, 'put_registroMov']);
+    Route::delete('delete_regisMov/{id}', [MovController::class, 'delete_regisMov']);     
  });
 
  Route::prefix('GrupoPeso')->group (function (){
   
-    Route::get('get_mostrarPeso', [AdafruitController::class, 'get_mostrarPeso']);
-    
+    Route::get('get_mostrarPeso', [PesoController::class, 'get_mostrarPeso']);
+    Route::post('post_registro_Peso', [PesoController::class, 'post_registro_Peso']);
+    Route::get('get_PesoMostrarReg', [PesoController::class, 'get_PesoMostrarReg']);
+    Route::put('put_registroPeso/{id}', [PesoController::class, 'put_registroPeso']);
+    Route::delete('delete_regisPeso/{id}', [PesoController::class, 'delete_regisPeso']);     
  });
 
- 
+ Route::prefix('GrupoTem')->group (function (){
 
+    Route::get('get_mostrarTem', [TemController::class, 'get_mostrarTem']);
+    Route::post('post_registro_Tem', [TemController::class, 'post_registro_Tem']);
+    Route::get('get_TemMostrarReg', [TemController::class, 'get_TemMostrarReg']);
+    Route::put('put_registroTem/{id}', [TemController::class, 'put_registroTem']);
+    Route::delete('delete_regisTem/{id}', [TemController::class, 'delete_regisTem']);         
+ });
+ 
  //------------------------------------------------------------------------------------------------------//
+
+
+
 
 
 
