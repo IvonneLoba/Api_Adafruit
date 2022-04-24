@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Http;
+use HTTP\Models\Distancia;
 
 //Distancia
 
@@ -32,7 +33,7 @@ public function put_registroDist (Request $R)
 {
   $Registro_Dist = $client::find($id);
   $Registro_Dist->datos = $R->datos;  
-  
+
 }
 
 public function delete_regisDist (int $id)
