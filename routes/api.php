@@ -59,6 +59,10 @@ Route::get('/prueba', function(){
     return 'holla';
 })->name('user');
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 //Sensor Tarjeta(wifi)
 //Route::get('get_motrarTarjeta/mostrar', [AdafruitController::class, 'get_motrarTarjeta']);
 
