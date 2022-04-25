@@ -11,6 +11,7 @@ use App\Http\Controllers\HumController;
 use App\Http\Controllers\MovController;
 use App\Http\Controllers\PesoController;
 use App\Http\Controllers\TemController;
+use App\Http\Controllers\AdminController;
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
@@ -52,7 +53,7 @@ Route::get('get_mostrarMov/mostrar', [MovController::class, 'get_mostrarMov']);
 //6-Sensor Peso
 Route::get('get_mostrarPeso/mostrar', [PesoController::class, 'get_mostrarPeso']);
 
-//Conslta Usuario
+//Consulta Usuario
 Route::get('get_mostrarusuario/mostrar', [UserController::class, 'get_mostrarusuario']);
 
 //Route::get('/prueba', function(){
@@ -64,6 +65,7 @@ Route::get('get_mostrarusuario/mostrar', [UserController::class, 'get_mostrarusu
 //Grupo Usuarios
 Route::prefix('GrupoUsuarios')->group (function (){
     Route::get('get_UserController/get_mostrarusuario', [UserController::class, 'get_mostrarusuario']);
+
     
  });
 
@@ -124,6 +126,12 @@ Route::prefix('GrupoDist')->group (function (){
     Route::get('get_TemMostrarReg', [TemController::class, 'get_TemMostrarReg']);
     Route::put('put_registroTem/{id}', [TemController::class, 'put_registroTem']);
     Route::delete('delete_regisTem/{id}', [TemController::class, 'delete_regisTem']);         
+ });
+
+ Route::prefix('GrupoIncubadoras')->group (function (){
+     Route::get('get_Incubadoras', [AdminController::class, 'get_Incubadoras']);
+     
+
  });
  
  //------------------------------------------------------------------------------------------------------//

@@ -57,8 +57,15 @@ public function delete_regisLed (int $id)
 }
 
 
-
-
+//public function post_groups (Request $request)
+//{
+  //$client = new Client();
+  //return $client->request('POST', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/groups',
+  //[
+    // 'headers'=>['X-AIO-Key', 'aio_bmll118GUg6Mg4NEm9pDH9g8CCAB'],
+     //'form_params' => ['group' => $request['group']]
+  //])->getBody();
+//}
 
 
 
@@ -70,15 +77,7 @@ public function delete_regisLed (int $id)
   //])->getBody();
 //}
 
-//public function post_groups (Request $request)
-//{
-  //$client = new Client();
-  //return $client->request('POST', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/groups',
-  //[
-    // 'headers'=>['X-AIO-Key', 'aio_ALNX33MRSmwsNXUM2fQmcyh1VT7h'],
-     //'form_params' => ['group' => $request['group']]
-  //])->getBody();
-//}
+
 
 }
 
