@@ -56,7 +56,17 @@ Route::get('get_mostrarPeso/mostrar', [PesoController::class, 'get_mostrarPeso']
 //Consulta Usuario
 Route::get('get_mostrarusuario/mostrar', [UserController::class, 'get_mostrarusuario']);
 
-//Route::get('/prueba', function(){
+//Grupos Sensores (Incubadoras)
+Route::post('post_groups/insertar', [AdafruitController::class, 'post_groups']);
+
+//Feeds
+Route::post('post_feeds/insertar', [AdafruitController::class, 'post_feeds']);
+
+//Incubadora1
+Route::post('post_incubadora1/insertar', [AdafruitController::class, 'post_incubadora1']);
+
+
+//Route::get('/prueba', fun
   //  return 'holla';
 //})->name('user');
 
@@ -128,12 +138,20 @@ Route::prefix('GrupoDist')->group (function (){
     Route::delete('delete_regisTem/{id}', [TemController::class, 'delete_regisTem']);         
  });
 
- Route::prefix('GrupoIncubadoras')->group (function (){
-     Route::get('get_Incubadoras', [AdminController::class, 'get_Incubadoras']);
-     
 
- });
- 
+ Route::prefix('GrupoIncubadoras')->group (function (){
+   Route::get('get_groups/ver', [AdafruitController::class, 'get_groups']);
+   Route::post('post_groups/insertar', [AdafruitController::class, 'post_groups']);
+});
+
+
+
+
+
+
+ //Route::prefix('GrupoIncubadoras')->group (function (){
+   //  Route::get('get_Incubadoras', [AdafruitController::class, 'get_Incubadoras']);
+ //}); 
  //------------------------------------------------------------------------------------------------------//
 
 

@@ -57,17 +57,48 @@ public function delete_regisLed (int $id)
 }
 
 
-//public function post_groups (Request $request)
-//{
-  //$client = new Client();
-  //return $client->request('POST', 'https://io.adafruit.com/api/v2/Yocelyn_Contreras09/groups',
-  //[
-    // 'headers'=>['X-AIO-Key', 'aio_bmll118GUg6Mg4NEm9pDH9g8CCAB'],
-     //'form_params' => ['group' => $request['group']]
-  //])->getBody();
-//}
+public function post_groups (Request $request)
+{
+  $resp=Http::post('https://io.adafruit.com/api/v2/IvonneLoba/groups',
+  [
+    'X-AIO-Key'=>'aio_bWOI4536mr0v1GG5k0NBzVJlb30g',
+     'name' => $request->name
+  ]);
+  return $resp;
+}
+
+public function get_groups (Request $request)
+{///api/v2/{username}/groups/{group_key}/feeds
+  $resp=Http::post('https://io.adafruit.com/api/v2/IvonneLoba/groups/incubadora1/feeds',
+  [
+    'X-AIO-Key'=>'aio_bWOI4536mr0v1GG5k0NBzVJlb30g'
+  ]);
+  return $resp;
+}
 
 
+//api/v2/{username}/feeds
+public function post_feeds(Request $request)
+{
+  $resp=Http::post('https://io.adafruit.com/api/v2/IvonneLoba/feeds',
+  [
+    'X-AIO-Key'=>'aio_bWOI4536mr0v1GG5k0NBzVJlb30g',
+     'name' => $request->name
+  ]);
+  return $resp;
+}
+
+///api/v2/{username}/groups/{group_key}/feeds
+
+public function post_incubadora1(Request $request)
+{
+  $resp=Http::post('https://io.adafruit.com/api/v2/IvonneLoba/groups/incubadora1/feeds',
+  [
+    'X-AIO-Key'=>'aio_bWOI4536mr0v1GG5k0NBzVJlb30g',
+     'name' => $request->name
+  ]);
+  return $resp;
+}
 
 
 //public function get_motrarTarjeta()
