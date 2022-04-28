@@ -61,7 +61,7 @@ public function post_groups (Request $request)
 {
   $resp=Http::post('https://io.adafruit.com/api/v2/IvonneLoba/groups',
   [
-    'X-AIO-Key'=>'aio_bWOI4536mr0v1GG5k0NBzVJlb30g',
+    'X-AIO-Key'=>'aio_mgDD898qB7b30hHwCvEtrojBGaOF',
      'name' => $request->name
   ]);
   return $resp;
@@ -69,9 +69,9 @@ public function post_groups (Request $request)
 
 public function get_groups (Request $request)
 {///api/v2/{username}/groups/{group_key}/feeds
-  $resp=Http::post('https://io.adafruit.com/api/v2/IvonneLoba/groups/incubadora1/feeds',
+  $resp=Http::get('https://io.adafruit.com/api/v2/IvonneLoba/groups/incubadora1/feeds',
   [
-    'X-AIO-Key'=>'aio_bWOI4536mr0v1GG5k0NBzVJlb30g'
+    'X-AIO-Key'=>'aio_mgDD898qB7b30hHwCvEtrojBGaOF'
   ]);
   return $resp;
 }
@@ -82,7 +82,7 @@ public function post_feeds(Request $request)
 {
   $resp=Http::post('https://io.adafruit.com/api/v2/IvonneLoba/feeds',
   [
-    'X-AIO-Key'=>'aio_bWOI4536mr0v1GG5k0NBzVJlb30g',
+    'X-AIO-Key'=>'aio_mgDD898qB7b30hHwCvEtrojBGaOF',
      'name' => $request->name
   ]);
   return $resp;
@@ -94,7 +94,7 @@ public function post_incubadora1(Request $request)
 {
   $resp=Http::post('https://io.adafruit.com/api/v2/IvonneLoba/groups/incubadora1/feeds',
   [
-    'X-AIO-Key'=>'aio_bWOI4536mr0v1GG5k0NBzVJlb30g',
+    'X-AIO-Key'=>'aio_mgDD898qB7b30hHwCvEtrojBGaOF',
      'name' => $request->name
   ]);
   return $resp;
